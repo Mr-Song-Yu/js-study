@@ -64,7 +64,7 @@ const popArr = arr.pop(); // "world"
 const pushArr = arr.push("world"); // 6
 
 /**
- * @reverse()
+ * @ reverse()
  * @input => null
  * @output => Array
  * 根据索引 index 进行数组逆序（会更改原数组）
