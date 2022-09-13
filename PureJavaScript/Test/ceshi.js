@@ -30,3 +30,6 @@ const value = true;
 if (value && (type == "2" || type == "3")) {
   console.log("成功执行");
 }
+
+// trim()正则
+/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
