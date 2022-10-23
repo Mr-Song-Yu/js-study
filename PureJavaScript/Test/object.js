@@ -13,7 +13,7 @@ const getTypeByObj = (obj) => {
  * @param {*} obj
  */
 const isEmptyObject = (obj) => {
-  for (var key in obj) {
+  for (let key in obj) {
     return false;
   }
   return true;

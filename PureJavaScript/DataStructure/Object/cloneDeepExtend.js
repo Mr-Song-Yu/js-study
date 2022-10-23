@@ -1,3 +1,17 @@
+// 深拷贝
+const deepClone = (data) => {
+  if (typeof data !== "object" || data === null) {
+    return data;
+  }
+  let result = Array.isArray(data) ? [] : {};
+  for (const key in data) {
+    if (Object.hasOwnProperty.call(data, key)) {
+      result[key] = deepClone(data[key]);
+    }
+  }
+  return result;
+};
+
 //函数拷贝
 const copyObj = (obj = {}) => {
   //变量先置空

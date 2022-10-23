@@ -1,4 +1,4 @@
-function objvalueSort(obj) {
+function obovateSort(obj) {
   // 根据数组中的对象的 value，得到排序后的key，return key2-key1 表示降序
   var newkey = Object.keys(obj).sort(function (key1, key2) {
     return obj[key2].value - obj[key1].value;
@@ -20,13 +20,13 @@ function objKeySort(object) {
   let map = new TreeMap();
   while (iteratorKeys.hasNext()) {
     let key = iteratorKeys.next().toString();
-    let vlaue = object.optString(key);
-    map.put(key, vlaue);
+    let value = object.optString(key);
+    map.put(key, value);
   }
   itemData = new LinkedList(map.values());
 }
 
-var ajson = {
+var jason = {
   result: [
     {
       cid: 1,
@@ -60,6 +60,6 @@ var ajson = {
 function sortJ(a, b) {
   return a.price - b.price;
 }
-var data = ajson.result.sort(sortJ);
+var data = jason.result.sort(sortJ);
 
 console.log(data);

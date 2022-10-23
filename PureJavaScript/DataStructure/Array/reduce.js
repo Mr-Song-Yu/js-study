@@ -43,8 +43,35 @@ const countChar = (text) => {
   //     {}
   //   );
 };
+
+// 数组重复值统计
+const countArray = (array) => {
+  // 重复的值有哪些
+  const obj = array.reduce((record, c) => {
+    record[c] = (record[c] || 0) + 1;
+    return record;
+  }, {});
+  let result = [];
+  for (const key in obj) {
+    if (Object.hasOwnProperty.call(obj, key)) {
+      if (obj[key] > 1) {
+        result.push(Number(key));
+      }
+    }
+  }
+  return result;
+
+  // 每个重复值的次数
+  // return array.reduce((record, c) => {
+  //   record[c] = (record[c] || 0) + 1;
+  //   return record;
+  // }, {});
+};
+
 const text = "划水水摸鱼鱼";
 console.log(countChar(text)); // { '划': 1, '水': 2, '摸': 1, '鱼': 2 }
+
+console.log(countArray([0, 0, 1, 2, 4, 4, 3, 3, 1, 5, 3]));
 
 console.log(totalizer([1, 2, 3, 4]));
 console.log(toTridimensional([[], [1, 2, 3], [null, undefined, 1, NaN]]));
