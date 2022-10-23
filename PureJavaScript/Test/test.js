@@ -1,5 +1,11 @@
 // 浏览器环境 的setTimeout, MessageChannel是宏任务,  MessageChannel的执行时机比setTimeout要靠前，Promise和MutationObserver是微任务
 // 常见的 宏任务 有 setTimeout、MessageChannel、postMessage、setImmediate。而常见的 微任务 有 MutationObsever 和 Promise.then。
+/**
+ * 执行顺序
+ * 同步代码 > 异步代码
+ * 异步任务中的宏任务（macrotask）和微任务（microtask）
+ * 微任务 > 宏任务
+ */
 function asyncCallByMO(cb) {
   const div = document.createElement("div");
   let count = 0;
