@@ -87,6 +87,7 @@ const shiftArr = arr.shift(); // "world"
  * @output => Array
  * * slice(start, end)
  * 返回子数组，以 arr[start] 开头，以 arr[end] 前一个元素结尾。
+ * slice() 方法返回一个新的数组对象，这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。原始数组不会被改变。
  */
 // arr: [ 'hello', 100000000, 3, 2, 1 ]
 const sliceArr1 = arr.slice(2); // [ 3, 2, 1 ]
@@ -113,6 +114,7 @@ const sortArr2 = arr.sort(sortNumber); // [ 1, 2, 3, 100000000, 'hello' ]
  * @output => Array
  * * splice(start, delcount[, item1[, ...[, itemN]]])
  * 从 start 开始，删除 delcount 个元素，然后插入所有的 item，会更改原数组。
+ * splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容。此方法会改变原数组。
  */
 // arr: [ 1, 2, 3, 100000000, 'hello' ]
 const spliceArr = arr.splice(1, 2, 3, [7, 8, 9]); // [ 2, 3 ]
