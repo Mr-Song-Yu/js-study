@@ -48,3 +48,64 @@ var isValid = function (s) {
 //@ 测试
 console.log(isValid("[(dgy{$dg***}h**f)]")); // true
 console.log(isValid("[(dgy{$dg**}hf])]")); // false
+
+// 方法二
+// var isValid = function (s) {
+//   const stack = [],
+//     map = {
+//       "(": ")",
+//       "{": "}",
+//       "[": "]",
+//     };
+//   for (const x of s) {
+//     if (x in map) {
+//       stack.push(x);
+//       continue;
+//     }
+//     if (map[stack.pop()] !== x) {
+//       return false;
+//     }
+//   }
+//   return !stack.length;
+// };
+
+// 方法三
+// var isValid = function (s) {
+//   const n = s.length;
+//   if (n % 2 === 1) {
+//     return false;
+//   }
+//   const pairs = new Map([
+//     [")", "("],
+//     ["]", "["],
+//     ["}", "{"],
+//   ]);
+//   const stk = [];
+//   for (let ch of s) {
+//     if (pairs.has(ch)) {
+//       if (!stk.length || stk[stk.length - 1] !== pairs.get(ch)) {
+//         return false;
+//       }
+//       stk.pop();
+//     } else {
+//       stk.push(ch);
+//     }
+//   }
+//   return !stk.length;
+// };
+
+// 方法四
+// var isValid = function (s) {
+//   let len = s.length;
+//   if (len % 2 !== 0) {
+//     return false;
+//   }
+//   let length = len / 2;
+//   for (let i = 0; i < length; i++) {
+//     s = s.replace("()", "");
+//     s = s.replace("{}", "");
+//     s = s.replace("[]", "");
+//   }
+
+//   return s.length === 0;
+// };
