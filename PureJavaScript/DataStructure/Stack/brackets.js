@@ -106,6 +106,5 @@ console.log(isValid("[(dgy{$dg**}hf])]")); // false
 //     s = s.replace("{}", "");
 //     s = s.replace("[]", "");
 //   }
-
 //   return s.length === 0;
 // };
